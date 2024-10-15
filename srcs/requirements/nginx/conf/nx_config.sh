@@ -30,26 +30,7 @@ echo "server {
 			include snippets/fastcgi-php.conf;
 			fastcgi_pass wordpress:9000;
 		}
-	}" >> /etc/nginx/conf.d/nginx.conf
-
-# echo "server {
-# 		listen 443 ssl;
-# 		server_name inception;
-
-# 		ssl_certificate /etc/nginx/certs/cert.csr;
-# 		ssl_certificate_key /etc/nginx/certs/cert.key;
-# 		ssl_protocols TLSv1.2 TLSv1.3;
-
-# 		root /var/www/html;
-# 		index index.php;
-
-# 		location ~ [^/]\.php(/|$) {
-# 			try_files $uri =404;
-# 			fastcgi_pass wordpress:9000;
-# 			include fastcgi_params;
-# 			fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-# 		}
-# 	}" >> /etc/nginx/conf.d/nginx.conf
+}" >> /etc/nginx/conf.d/nginx.conf
 
 # run nginx in the forground
 nginx -g "daemon off;"
